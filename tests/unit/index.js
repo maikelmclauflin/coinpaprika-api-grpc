@@ -1,5 +1,8 @@
 module.exports = Object.assign(
   {},
+  require('./coin'),
   require('./coins'),
+  require('./coin-events'),
+  require('./coin-twitter'),
   require('./market-overview'),
 )

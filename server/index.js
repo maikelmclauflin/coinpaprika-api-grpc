@@ -28,6 +28,9 @@ async function start () {
   server.addService(v1Package.v1_5_3.API.service, {
     MarketOverview: urnary(mock.marketOverview),
     Coins: stream(mock.coins),
+    Coin: urnary(mock.coin),
+    CoinTwitter: urnary(mock.coinTwitter),
+    CoinEvents: stream(mock.coinEvents),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)

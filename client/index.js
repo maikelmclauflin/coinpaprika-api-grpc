@@ -20,6 +20,9 @@ test.before(startGrpcServer)
 module.exports = {
   marketOverview: clientWrap('MarketOverview'),
   coins: clientWrap('Coins', { stream: true, }),
+  coin: clientWrap('Coin'),
+  coinTwitter: clientWrap('CoinTwitter'),
+  coinEvents: clientWrap('CoinEvents', { stream: true, }),
 }
 
 function call (transfer, transform) {

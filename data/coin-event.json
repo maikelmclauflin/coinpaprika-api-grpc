@@ -1,0 +1,10 @@
+{
+  "id": "17398-cme-april-first-trade",
+  "date": "2018-04-02T00:00:00Z",
+  "date_to": "string",
+  "name": "CME: April First Trade",
+  "description": "First trade of Bitcoin futures contract for April 2018.",
+  "is_conference": false,
+  "link": "http://www.cmegroup.com/trading/equity-index/us-index/bitcoin_product_calendar_futures.html",
+  "proof_image_link": "https://static.coinpaprika.com/storage/cdn/event_images/16635.jpg"
+}

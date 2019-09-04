@@ -1,7 +1,13 @@
 syntax = "proto3";
 package coin;
 
-message Coin {
+message TerseSummary {
+  string id = 1;
+  string name = 2;
+  string symbol = 3;
+}
+
+message Summary {
   string id = 1;
   string name = 2;
   string symbol = 3;
@@ -9,4 +15,90 @@ message Coin {
   bool is_new = 5;
   bool is_active = 6;
   string type = 7;
+}
+
+message RequestBy {
+  string coin = 1;
+}
+
+message Tag {
+  string id = 1;
+  string name = 2;
+  int32 coin_counter = 3;
+  int32 ico_counter = 4;
+}
+
+message Member {
+  string id = 1;
+  string name = 2;
+  string position = 3;
+}
+
+message LinksHash {
+  repeated Link explorer = 1;
+  repeated Link facebook = 2;
+  repeated Link reddit = 3;
+  repeated Link source_code = 4;
+  repeated Link website = 5;
+  repeated Link youtube = 6;
+  repeated Link medium = 7;
+}
+
+message Link {
+  string url = 1;
+  string type = 2;
+  string company = 3;
+  bool extended = 4;
+  map<string, string> stats = 5;
+}
+
+message Details {
+  string id = 1;
+  string name = 2;
+  string symbol = 3;
+  TerseSummary parent = 4;
+  int32 rank = 5;
+  bool is_new = 6;
+  bool is_active = 7;
+  string type = 8;
+  repeated Tag tags = 9;
+  repeated Member team = 10;
+  string description = 11;
+  string message = 12;
+  bool open_source = 13;
+  bool hardware_wallet = 14;
+  string started_at = 15;
+  string development_status = 16;
+  string proof_type = 17;
+  string org_structure = 18;
+  string hash_algorithm = 19;
+  repeated Link links = 20;
+  map<string, string> whitepaper = 21;
+  string first_data_at = 22;
+  string last_data_at = 23;
+}
+
+message Twitter {
+  string date = 1;
+  string user_name = 2;
+  string user_image_link = 3;
+  string status = 4;
+  bool is_retweet = 5;
+  int64 retweet_count = 6;
+  int64 like_count = 7;
+  string status_link = 8;
+  string status_id = 9;
+  string media_link = 10;
+  string youtube_link = 11;
+}
+
+message Event {
+  string id = 1;
+  string date = 2;
+  string date_to = 3;
+  string name = 4;
+  string description = 5;
+  bool is_conference = 6;
+  string link = 7;
+  string proof_image_link = 8;
 }

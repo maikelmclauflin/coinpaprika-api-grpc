@@ -11,5 +11,11 @@ service API {
   // Gets a summary of the market
   rpc MarketOverview (utils.Empty) returns (misc.MarketOverview);
   // Gets a list of all of the coins
-  rpc Coins (utils.Empty) returns (stream coin.Coin);
+  rpc Coins (utils.Empty) returns (stream coin.Summary);
+  // Gets a detailed description of a singular coin
+  rpc Coin (coin.RequestBy) returns (coin.Details);
+  // Gets the latest tweet about a given coin
+  rpc CoinTwitter (coin.RequestBy) returns (coin.Twitter);
+  // Gets the latest events about a given coin
+  rpc CoinEvents (coin.RequestBy) returns (stream coin.Event);
 }
