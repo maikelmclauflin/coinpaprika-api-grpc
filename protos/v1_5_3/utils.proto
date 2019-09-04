@@ -1,0 +1,8 @@
+syntax = "proto3";
+package utils;
+
+message Empty {}
+
+message Auth {
+  string apiKey = 1;
+}

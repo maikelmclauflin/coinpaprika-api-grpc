@@ -1,0 +1,15 @@
+syntax = "proto3";
+package v1_5_3;
+
+import "utils.proto";
+import "misc.proto";
+import "coin.proto";
+
+option go_package="v1_5_3";
+
+service API {
+  // Gets a summary of the market
+  rpc MarketOverview (utils.Empty) returns (misc.MarketOverview);
+  // Gets a list of all of the coins
+  rpc Coins (utils.Empty) returns (stream coin.Coin);
+}

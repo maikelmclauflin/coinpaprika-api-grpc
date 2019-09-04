@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - lts
+branches:
+  only:
+  - master
+node_js:
+- node
+before_install:
+  - npm --version
+install:
+  - npm ci
+sudo: required
+before_script:
+  - npm audit

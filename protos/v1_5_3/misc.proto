@@ -1,0 +1,16 @@
+syntax = "proto3";
+package misc;
+
+message MarketOverview {
+  int64 market_cap_usd = 1;
+  int64 volume_24h_usd = 2;
+  double bitcoin_dominance_percentage = 3;
+  int32 cryptocurrencies_number = 4;
+  int64 market_cap_ath_value = 5;
+  string market_cap_ath_date = 6;
+  int64 volume_24h_ath_value = 7;
+  string volume_24h_ath_date = 8;
+  double market_cap_change_24h = 9;
+  double volume_24h_change_24h = 10;
+  int64 last_updated = 11;
+}

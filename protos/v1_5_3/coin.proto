@@ -1,0 +1,12 @@
+syntax = "proto3";
+package coin;
+
+message Coin {
+  string id = 1;
+  string name = 2;
+  string symbol = 3;
+  int32 rank = 4;
+  bool is_new = 5;
+  bool is_active = 6;
+  string type = 7;
+}
