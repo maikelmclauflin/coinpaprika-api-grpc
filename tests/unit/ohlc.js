@@ -6,6 +6,8 @@ module.exports = {
 function ohlc (test, io) {
   test('ohlc', async (t) => {
     await checkOHLC('latest')
+    await checkOHLC('historical')
+    await checkOHLC('today')
 
     async function checkOHLC (modifier) {
       const { body, } = await io.ohlc({
