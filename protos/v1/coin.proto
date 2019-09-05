@@ -102,3 +102,37 @@ message Event {
   string link = 7;
   string proof_image_link = 8;
 }
+
+message Ticker {
+  string name = 1;
+  string symbol = 2;
+}
+
+message Exchange {
+  string id = 1;
+  string name = 2;
+  repeated Ticker fiats = 3;
+  double adjusted_volume_24h_share = 4;
+}
+
+message Quote {
+  string price = 1;
+  string volume_24h = 2;
+}
+
+message Market {
+  string exchange_id = 1;
+  string exchange_name = 2;
+  string pair = 3;
+  string base_currency_id = 4;
+  string base_currency_name = 5;
+  string quote_currency_id = 6;
+  string quote_currency_name = 7;
+  string market_url = 8;
+  string category = 9;
+  string fee_type = 10;
+  bool outlier = 11;
+  double adjusted_volume_24h_share = 12;
+  map<string, Quote> quotes = 13;
+  string last_updated = 14;
+}

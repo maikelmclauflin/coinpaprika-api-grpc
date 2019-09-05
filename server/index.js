@@ -31,6 +31,8 @@ async function start () {
     Coin: urnary(mock.coin),
     CoinTwitter: stream(mock.coinTwitter),
     CoinEvents: stream(mock.coinEvents),
+    Exchanges: stream(mock.exchanges),
+    Markets: stream(mock.markets),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)

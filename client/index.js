@@ -23,6 +23,8 @@ module.exports = {
   coin: clientWrap('Coin'),
   coinTwitter: clientWrap('CoinTwitter', { stream: true, }),
   coinEvents: clientWrap('CoinEvents', { stream: true, }),
+  exchanges: clientWrap('Exchanges', { stream: true, }),
+  markets: clientWrap('Markets', { stream: true, }),
 }
 
 function call (transfer, transform) {

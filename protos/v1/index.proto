@@ -18,4 +18,8 @@ service API {
   rpc CoinTwitter (coin.RequestBy) returns (stream coin.Twitter);
   // Gets the latest events about a given coin
   rpc CoinEvents (coin.RequestBy) returns (stream coin.Event);
+  // Gets the exchanges that host a given coin
+  rpc Exchanges (coin.RequestBy) returns (stream coin.Exchange);
+  // Gets the markets associated with a given coin
+  rpc Markets (coin.RequestBy) returns (stream coin.Market);
 }

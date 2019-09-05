@@ -7,6 +7,8 @@ module.exports = {
   coin,
   coinTwitter,
   coinEvents,
+  exchanges,
+  markets,
 }
 
 function marketOverview () {
@@ -28,4 +30,12 @@ function coinTwitter () {
 function coinEvents () {
   const event = utils.readDataFile('coin-event.json')
   return [event, event]
+}
+
+function exchanges () {
+  return [utils.readDataFile('exchange.json')]
+}
+
+function markets () {
+  return utils.readDataFile('markets.json')
 }
