@@ -27,6 +27,8 @@ module.exports = {
   markets: clientWrap('Markets', { stream: true, }),
   ohlc: clientWrap('OHLC', { stream: true, }),
   person: clientWrap('Person'),
+  tags: clientWrap('Tags', { stream: true, }),
+  tag: clientWrap('Tag'),
 }
 
 function call (transfer, transform) {

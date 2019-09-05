@@ -3,10 +3,6 @@ package utils;
 
 message Empty {}
 
-message Auth {
-  string apiKey = 1;
-}
-
 message Link {
   string url = 1;
   string type = 2;

@@ -35,6 +35,8 @@ async function start () {
     Markets: stream(mock.markets),
     OHLC: stream(mock.ohlc),
     Person: urnary(mock.person),
+    Tags: stream(mock.tags),
+    Tag: urnary(mock.tag),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)

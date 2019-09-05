@@ -6,6 +6,7 @@ import "misc.proto";
 import "coin.proto";
 import "ohlc.proto";
 import "person.proto";
+import "tag.proto";
 
 option go_package="v1";
 
@@ -28,4 +29,8 @@ service API {
   rpc OHLC (ohlc.Request) returns (stream ohlc.Unit);
   // Gets detailed information about a person in the cryptosphere
   rpc Person (person.RequestById) returns (person.Person);
+  // Gets all tags
+  rpc Tags (utils.Empty) returns (stream tag.Tag);
+  // Gets all tags
+  rpc Tag (tag.RequestById) returns (tag.Tag);
 }

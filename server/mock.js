@@ -11,6 +11,8 @@ module.exports = {
   markets,
   ohlc,
   person,
+  tags,
+  tag,
 }
 
 function marketOverview () {
@@ -51,4 +53,17 @@ function ohlc ({
 
 function person () {
   return utils.readDataFile('person.json')
+}
+
+function tags () {
+  return utils.readDataFile('tags.json')
+}
+
+function tag ({
+  id
+}) {
+  const tags = utils.readDataFile('tags.json')
+  return _.find(tags, {
+    id,
+  })
 }

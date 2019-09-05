@@ -9,4 +9,6 @@ module.exports = Object.assign(
   require('./markets'),
   require('./ohlc'),
   require('./person'),
+  require('./tags'),
+  require('./tag'),
 )

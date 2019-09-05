@@ -11,3 +11,6 @@ grpcTests.exchanges()
 grpcTests.markets()
 grpcTests.ohlc()
 grpcTests.person()
+grpcTests.tags()
+grpcTests.tag()
+
