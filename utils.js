@@ -13,7 +13,7 @@ function readDataFile (...structure) {
 }
 
 function protosPath (version) {
-  return path.join(__dirname, 'protos', version || 'v1_5_3', 'index.proto')
+  return path.join(__dirname, 'protos', version || 'v1', 'index.proto')
 }
 
 function binding () {

@@ -14,14 +14,14 @@ const packageDefinition = protoLoader.loadSync(protopath, {
   oneofs: true
 })
 const V1Package = new GRPC.loadPackageDefinition(packageDefinition) // eslint-disable-line
-const grpcClient = new V1Package.v1_5_3.API(utils.binding(), GRPC.credentials.createInsecure())
+const grpcClient = new V1Package.v1.API(utils.binding(), GRPC.credentials.createInsecure())
 test.before(startGrpcServer)
 
 module.exports = {
   marketOverview: clientWrap('MarketOverview'),
   coins: clientWrap('Coins', { stream: true, }),
   coin: clientWrap('Coin'),
-  coinTwitter: clientWrap('CoinTwitter'),
+  coinTwitter: clientWrap('CoinTwitter', { stream: true, }),
   coinEvents: clientWrap('CoinEvents', { stream: true, }),
 }
 

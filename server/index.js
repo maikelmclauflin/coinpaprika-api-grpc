@@ -25,11 +25,11 @@ async function start () {
   const v1Definition = protoLoader.loadSync(v1FilePath, options)
   const v1Package = grpc.loadPackageDefinition(v1Definition)
   const server = new grpc.Server()
-  server.addService(v1Package.v1_5_3.API.service, {
+  server.addService(v1Package.v1.API.service, {
     MarketOverview: urnary(mock.marketOverview),
     Coins: stream(mock.coins),
     Coin: urnary(mock.coin),
-    CoinTwitter: urnary(mock.coinTwitter),
+    CoinTwitter: stream(mock.coinTwitter),
     CoinEvents: stream(mock.coinEvents),
   })
   const insecure = grpc.ServerCredentials.createInsecure()

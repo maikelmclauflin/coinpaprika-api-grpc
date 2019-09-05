@@ -8,7 +8,7 @@ function coinTwitter (test, io) {
     const { body, } = await io.coinTwitter({
       coin: 'BTC',
     })
-    const coin = utils.readDataFile('coin-twitter.json')
-    t.deepEqual(coin, body, 'a summary of the latest tweet of a coin')
+    const tweet = utils.readDataFile('coin-twitter.json')
+    t.deepEqual([tweet], body, 'a summary of the latest tweet of a coin')
   })
 }

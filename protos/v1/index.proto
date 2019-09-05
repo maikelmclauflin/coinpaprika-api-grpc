@@ -1,11 +1,11 @@
 syntax = "proto3";
-package v1_5_3;
+package v1;
 
 import "utils.proto";
 import "misc.proto";
 import "coin.proto";
 
-option go_package="v1_5_3";
+option go_package="v1";
 
 service API {
   // Gets a summary of the market
@@ -15,7 +15,7 @@ service API {
   // Gets a detailed description of a singular coin
   rpc Coin (coin.RequestBy) returns (coin.Details);
   // Gets the latest tweet about a given coin
-  rpc CoinTwitter (coin.RequestBy) returns (coin.Twitter);
+  rpc CoinTwitter (coin.RequestBy) returns (stream coin.Twitter);
   // Gets the latest events about a given coin
   rpc CoinEvents (coin.RequestBy) returns (stream coin.Event);
 }

@@ -22,7 +22,7 @@ function coin () {
 }
 
 function coinTwitter () {
-  return utils.readDataFile('coin-twitter.json')
+  return [utils.readDataFile('coin-twitter.json')]
 }
 
 function coinEvents () {
