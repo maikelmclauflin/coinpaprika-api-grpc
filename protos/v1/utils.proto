@@ -6,3 +6,11 @@ message Empty {}
 message Auth {
   string apiKey = 1;
 }
+
+message Link {
+  string url = 1;
+  string type = 2;
+  string company = 3;
+  bool extended = 4;
+  map<string, string> stats = 5;
+}

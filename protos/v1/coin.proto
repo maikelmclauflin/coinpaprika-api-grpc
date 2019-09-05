@@ -1,6 +1,8 @@
 syntax = "proto3";
 package coin;
 
+import "utils.proto";
+
 message TerseSummary {
   string id = 1;
   string name = 2;
@@ -34,24 +36,6 @@ message Member {
   string position = 3;
 }
 
-message LinksHash {
-  repeated Link explorer = 1;
-  repeated Link facebook = 2;
-  repeated Link reddit = 3;
-  repeated Link source_code = 4;
-  repeated Link website = 5;
-  repeated Link youtube = 6;
-  repeated Link medium = 7;
-}
-
-message Link {
-  string url = 1;
-  string type = 2;
-  string company = 3;
-  bool extended = 4;
-  map<string, string> stats = 5;
-}
-
 message Details {
   string id = 1;
   string name = 2;
@@ -72,7 +56,7 @@ message Details {
   string proof_type = 17;
   string org_structure = 18;
   string hash_algorithm = 19;
-  repeated Link links = 20;
+  repeated utils.Link links = 20;
   map<string, string> whitepaper = 21;
   string first_data_at = 22;
   string last_data_at = 23;

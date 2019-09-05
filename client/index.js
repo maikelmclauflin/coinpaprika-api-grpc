@@ -26,6 +26,7 @@ module.exports = {
   exchanges: clientWrap('Exchanges', { stream: true, }),
   markets: clientWrap('Markets', { stream: true, }),
   ohlc: clientWrap('OHLC', { stream: true, }),
+  person: clientWrap('Person'),
 }
 
 function call (transfer, transform) {

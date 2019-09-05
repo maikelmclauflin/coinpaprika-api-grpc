@@ -34,17 +34,12 @@ async function start () {
     Exchanges: stream(mock.exchanges),
     Markets: stream(mock.markets),
     OHLC: stream(mock.ohlc),
+    Person: urnary(mock.person),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)
   server.start()
   return server
-}
-
-function mapHistory (fn) {
-  return async function (target) {
-    return target.map(fn)
-  }
 }
 
 function stream (...fns) {

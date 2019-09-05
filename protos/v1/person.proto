@@ -1,0 +1,23 @@
+syntax = "proto3";
+package person;
+
+import "utils.proto";
+
+message Position {
+  string coin_id = 1;
+  string coin_name = 2;
+  string position = 3;
+}
+
+message RequestById {
+  string id = 1;
+}
+
+message Person {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  int32 teams_count = 4;
+  repeated utils.Link links = 5;
+  repeated Position positions = 6;
+}

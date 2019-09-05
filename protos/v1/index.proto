@@ -5,6 +5,7 @@ import "utils.proto";
 import "misc.proto";
 import "coin.proto";
 import "ohlc.proto";
+import "person.proto";
 
 option go_package="v1";
 
@@ -25,4 +26,6 @@ service API {
   rpc Markets (coin.RequestBy) returns (stream coin.Market);
   // Gets the OHLC data
   rpc OHLC (ohlc.Request) returns (stream ohlc.Unit);
+  // Gets detailed information about a person in the cryptosphere
+  rpc Person (person.RequestById) returns (person.Person);
 }

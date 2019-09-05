@@ -10,6 +10,7 @@ module.exports = {
   exchanges,
   markets,
   ohlc,
+  person,
 }
 
 function marketOverview () {
@@ -46,4 +47,8 @@ function ohlc ({
   modifier,
 }) {
   return utils.readDataFile(`ohlc-${modifier}.json`)
+}
+
+function person () {
+  return utils.readDataFile('person.json')
 }
