@@ -9,6 +9,7 @@ module.exports = {
   coinEvents,
   exchanges,
   markets,
+  ohlc,
 }
 
 function marketOverview () {
@@ -38,4 +39,11 @@ function exchanges () {
 
 function markets () {
   return utils.readDataFile('markets.json')
+}
+
+function ohlc ({
+  coin,
+  modifier,
+}) {
+  return utils.readDataFile(`ohlc-${modifier}.json`)
 }

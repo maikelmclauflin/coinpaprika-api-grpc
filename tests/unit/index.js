@@ -7,4 +7,5 @@ module.exports = Object.assign(
   require('./exchanges'),
   require('./market-overview'),
   require('./markets'),
+  require('./ohlc'),
 )

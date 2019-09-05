@@ -25,6 +25,7 @@ module.exports = {
   coinEvents: clientWrap('CoinEvents', { stream: true, }),
   exchanges: clientWrap('Exchanges', { stream: true, }),
   markets: clientWrap('Markets', { stream: true, }),
+  ohlc: clientWrap('OHLC', { stream: true, }),
 }
 
 function call (transfer, transform) {

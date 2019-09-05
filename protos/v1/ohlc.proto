@@ -1,0 +1,22 @@
+syntax = "proto3";
+package ohlc;
+
+message Unit {
+  string time_open = 1;
+  string time_close = 2;
+  string open = 3;
+  string high = 4;
+  string low = 5;
+  string close = 6;
+  string volume = 7;
+  string market_cap = 8;
+}
+
+message Request {
+  string coin = 1;
+  string modifier = 2; // today, latest, historical
+  string start = 3;
+  string end = 4;
+  int32 limit = 5;
+  string quote = 6; // the base currency
+}

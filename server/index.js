@@ -33,6 +33,7 @@ async function start () {
     CoinEvents: stream(mock.coinEvents),
     Exchanges: stream(mock.exchanges),
     Markets: stream(mock.markets),
+    OHLC: stream(mock.ohlc),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)

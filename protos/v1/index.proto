@@ -4,6 +4,7 @@ package v1;
 import "utils.proto";
 import "misc.proto";
 import "coin.proto";
+import "ohlc.proto";
 
 option go_package="v1";
 
@@ -22,4 +23,6 @@ service API {
   rpc Exchanges (coin.RequestBy) returns (stream coin.Exchange);
   // Gets the markets associated with a given coin
   rpc Markets (coin.RequestBy) returns (stream coin.Market);
+  // Gets the OHLC data
+  rpc OHLC (ohlc.Request) returns (stream ohlc.Unit);
 }

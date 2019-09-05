@@ -6,7 +6,9 @@ module.exports = {
 function coin (test, io) {
   test('coin', async (t) => {
     const { body, } = await io.coin({
-      coin: 'BTC',
+      inputs: {
+        coin: 'BTC',
+      }
     })
     const coin = utils.readDataFile('coin-detail.json')
     t.deepEqual(coin, body, 'a detailed snapshot of the coin')
