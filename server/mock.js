@@ -14,6 +14,7 @@ module.exports = {
   tags,
   tag,
   tickers,
+  historicalTickers,
 }
 
 function marketOverview () {
@@ -83,4 +84,14 @@ function tickers ({
     return utils.readDataFile('tickers-quotes-btc.json')
   }
   return tickers
+}
+
+function historicalTickers ({
+  start,
+  end,
+  limit,
+  quote,
+  interval,
+}) {
+  return utils.readDataFile('historical-tickers.json')
 }

@@ -35,3 +35,18 @@ message Request {
   repeated string coins = 1;
   repeated string quotes = 2;
 }
+
+message HistoricalRequest {
+  string start = 1;
+  string end = 2;
+  int32 limit = 3;
+  string quote = 4;
+  string interval = 5;
+}
+
+message HistoricalTicker {
+  string timestamp = 1;
+  double price = 2;
+  double volume_24h = 3;
+  double market_cap = 4;
+}

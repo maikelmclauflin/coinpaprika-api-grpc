@@ -30,6 +30,7 @@ module.exports = {
   tags: clientWrap('Tags', { stream, }),
   tag: clientWrap('Tag'),
   tickers: clientWrap('Tickers', { stream, }),
+  historicalTickers: clientWrap('HistoricalTickers', { stream, }),
 }
 
 function call (transfer, transform) {
