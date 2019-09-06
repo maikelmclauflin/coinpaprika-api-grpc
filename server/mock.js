@@ -70,10 +70,17 @@ function tag ({
 }
 
 function tickers ({
-  quotes
+  coins,
+  quotes,
 }) {
-  if (quotes && quotes[0] === 'BTC') {
+  const tickers = utils.readDataFile('tickers-default.json')
+  if (coins && coins.length) {
+    return _.filter(tickers, ({ id }) => {
+      return coins.includes(id)
+    })
+  }
+  if (quotes && quotes.length) {
     return utils.readDataFile('tickers-quotes-btc.json')
   }
-  return utils.readDataFile('tickers-default.json')
+  return tickers
 }

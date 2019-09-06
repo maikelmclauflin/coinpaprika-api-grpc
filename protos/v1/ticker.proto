@@ -31,6 +31,7 @@ message Quote {
   double percent_from_price_ath = 14;
 }
 
-message RequestByQuotes {
-  repeated string quotes = 1;
+message Request {
+  repeated string coins = 1;
+  repeated string quotes = 2;
 }

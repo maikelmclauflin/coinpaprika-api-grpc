@@ -1,4 +1,5 @@
 const utils = require('utils')
+const _ = require('lodash')
 module.exports = {
   tickers,
 }
@@ -15,5 +16,16 @@ function tickers (test, io) {
     })
     const tickersBTC = utils.readDataFile('tickers-quotes-btc.json')
     t.deepEqual(tickersBTC, tickersQuotedBTC, 'tickers should transfer quotes relative to what is asked for')
+    const key = 'eth-ethereum'
+    const { body: ETHTickersQuotedUSD, } = await io.tickers({
+      inputs: {
+        coins: [key],
+        quotes: ['USD']
+      }
+    })
+    const filtered = _.filter(tickers, ({ id }) => {
+      return id == key
+    })
+    t.deepEqual(filtered, ETHTickersQuotedUSD, 'tickers should transfer quotes relative to what is asked for')
   })
 }

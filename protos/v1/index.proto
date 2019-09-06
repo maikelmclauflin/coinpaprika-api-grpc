@@ -35,5 +35,5 @@ service API {
   // Gets all tags
   rpc Tag (tag.RequestById) returns (tag.Tag);
   // Get all tickers with their quotes
-  rpc Tickers (ticker.RequestByQuotes) returns (stream ticker.Ticker);
+  rpc Tickers (ticker.Request) returns (stream ticker.Ticker);
 }
