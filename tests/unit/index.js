@@ -11,4 +11,5 @@ module.exports = Object.assign(
   require('./person'),
   require('./tags'),
   require('./tag'),
+  require('./tickers'),
 )

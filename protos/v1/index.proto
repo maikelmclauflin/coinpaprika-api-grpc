@@ -7,6 +7,7 @@ import "coin.proto";
 import "ohlc.proto";
 import "person.proto";
 import "tag.proto";
+import "ticker.proto";
 
 option go_package="v1";
 
@@ -33,4 +34,6 @@ service API {
   rpc Tags (utils.Empty) returns (stream tag.Tag);
   // Gets all tags
   rpc Tag (tag.RequestById) returns (tag.Tag);
+  // Get all tickers with their quotes
+  rpc Tickers (ticker.RequestByQuotes) returns (stream ticker.Ticker);
 }

@@ -13,6 +13,7 @@ module.exports = {
   person,
   tags,
   tag,
+  tickers,
 }
 
 function marketOverview () {
@@ -66,4 +67,13 @@ function tag ({
   return _.find(tags, {
     id,
   })
+}
+
+function tickers ({
+  quotes
+}) {
+  if (quotes && quotes[0] === 'BTC') {
+    return utils.readDataFile('tickers-quotes-btc.json')
+  }
+  return utils.readDataFile('tickers-default.json')
 }

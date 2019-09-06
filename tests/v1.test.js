@@ -13,4 +13,4 @@ grpcTests.ohlc()
 grpcTests.person()
 grpcTests.tags()
 grpcTests.tag()
-
+grpcTests.tickers()

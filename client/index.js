@@ -16,19 +16,20 @@ const packageDefinition = protoLoader.loadSync(protopath, {
 const V1Package = new GRPC.loadPackageDefinition(packageDefinition) // eslint-disable-line
 const grpcClient = new V1Package.v1.API(utils.binding(), GRPC.credentials.createInsecure())
 test.before(startGrpcServer)
-
+const stream = true
 module.exports = {
   marketOverview: clientWrap('MarketOverview'),
-  coins: clientWrap('Coins', { stream: true, }),
+  coins: clientWrap('Coins', { stream, }),
   coin: clientWrap('Coin'),
-  coinTwitter: clientWrap('CoinTwitter', { stream: true, }),
-  coinEvents: clientWrap('CoinEvents', { stream: true, }),
-  exchanges: clientWrap('Exchanges', { stream: true, }),
-  markets: clientWrap('Markets', { stream: true, }),
-  ohlc: clientWrap('OHLC', { stream: true, }),
+  coinTwitter: clientWrap('CoinTwitter', { stream, }),
+  coinEvents: clientWrap('CoinEvents', { stream, }),
+  exchanges: clientWrap('Exchanges', { stream, }),
+  markets: clientWrap('Markets', { stream, }),
+  ohlc: clientWrap('OHLC', { stream, }),
   person: clientWrap('Person'),
-  tags: clientWrap('Tags', { stream: true, }),
+  tags: clientWrap('Tags', { stream, }),
   tag: clientWrap('Tag'),
+  tickers: clientWrap('Tickers', { stream, }),
 }
 
 function call (transfer, transform) {

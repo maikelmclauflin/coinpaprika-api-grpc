@@ -1,0 +1,36 @@
+syntax = "proto3";
+package ticker;
+
+message Ticker {
+  string id = 1;
+  string name = 2;
+  string symbol = 3;
+  int32 rank = 4;
+  double circulating_supply = 5;
+  double total_supply = 6;
+  double max_supply = 7;
+  double beta_value = 8;
+  string last_updated = 9;
+  map<string, Quote> quotes = 10;
+}
+
+message Quote {
+  double price = 1;
+  double volume_24h = 2;
+  double volume_24h_change_24h = 3;
+  double market_cap = 4;
+  double market_cap_change_24h = 5;
+  double percent_change_1h = 6;
+  double percent_change_12h = 7;
+  double percent_change_24h = 8;
+  double percent_change_7d = 9;
+  double percent_change_30d = 10;
+  double percent_change_1y = 11;
+  double ath_price = 12;
+  string ath_date = 13;
+  double percent_from_price_ath = 14;
+}
+
+message RequestByQuotes {
+  repeated string quotes = 1;
+}
