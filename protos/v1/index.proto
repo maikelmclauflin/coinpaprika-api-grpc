@@ -10,6 +10,7 @@ import "tag.proto";
 import "ticker.proto";
 import "exchange.proto";
 import "search.proto";
+import "price.proto";
 
 option go_package="v1";
 
@@ -42,4 +43,6 @@ service API {
   rpc Exchanges (exchange.RequestInputs) returns (stream exchange.Item);
   // Search
   rpc Search (search.Request) returns (search.Result);
+  // convert between prices
+  rpc PriceConverter (price.Request) returns (price.Response);
 }

@@ -32,6 +32,7 @@ module.exports = {
   historicalTickers: clientWrap('HistoricalTickers', { stream, }),
   exchanges: clientWrap('Exchanges', { stream, }),
   search: clientWrap('Search'),
+  priceConverter: clientWrap('PriceConverter'),
 }
 
 function call (transfer, transform) {

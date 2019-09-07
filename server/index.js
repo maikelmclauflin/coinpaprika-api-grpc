@@ -41,6 +41,7 @@ async function start () {
     HistoricalTickers: stream(mock.historicalTickers),
     Exchanges: stream(mock.exchanges),
     Search: urnary(mock.search),
+    PriceConverter: urnary(mock.priceConverter),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)

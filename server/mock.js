@@ -16,6 +16,7 @@ module.exports = {
   historicalTickers,
   exchanges,
   search,
+  priceConverter,
 }
 
 function marketOverview () {
@@ -99,4 +100,8 @@ function exchanges () {
 
 function search () {
   return utils.readDataFile('search-btc.json')
+}
+
+function priceConverter () {
+  return utils.readDataFile('price-converter.json')
 }

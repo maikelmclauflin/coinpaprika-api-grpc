@@ -1,0 +1,19 @@
+syntax = "proto3";
+package price;
+
+message Response {
+  string base_currency_id = 1;
+  string base_currency_name = 2;
+  string base_price_last_updated = 3;
+  string quote_currency_id = 4;
+  string quote_currency_name = 5;
+  string quote_price_last_updated = 6;
+  double amount = 7;
+  double price = 8;
+}
+
+message Request {
+  string base_currency_id = 1;
+  string quote_currency_id = 2;
+  double amount = 3;
+}

@@ -11,6 +11,7 @@ module.exports = Object.assign(
   require('./markets'),
   require('./ohlc'),
   require('./person'),
+  require('./price-converter'),
   require('./search'),
   require('./tags'),
   require('./tickers'),
