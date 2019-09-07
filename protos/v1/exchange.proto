@@ -1,0 +1,37 @@
+syntax = "proto3";
+package exchange;
+
+import "utils.proto";
+import "ticker.proto";
+
+message Global {
+  string id = 1;
+  string name = 2;
+  repeated ticker.Short fiats = 3;
+  // total 24hr
+  double adjusted_volume_24h_share = 4;
+}
+
+message Item {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  bool active = 4;
+  bool website_status = 5;
+  bool api_status = 6;
+  string message = 7;
+  repeated utils.Link links = 8;
+  bool markets_data_fetched = 9;
+  int32 adjusted_rank = 10;
+  int32 reported_rank = 11;
+  int32 currencies = 12;
+  int32 markets = 13;
+  repeated ticker.Short fiats = 14;
+  map<string, ticker.Volumes> quotes = 15;
+  string last_updated = 16;
+}
+
+message RequestInputs {
+  repeated string exchanges = 1;
+  repeated string quotes = 2;
+}

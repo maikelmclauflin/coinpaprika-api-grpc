@@ -6,11 +6,11 @@ module.exports = {
 function exchanges (test, io) {
   test('exchanges', async (t) => {
     const { body, } = await io.exchanges({
-      inputs: {
-        coin: 'BTC',
-      }
+      // inputs: {
+        // quotes: ['BTC'],
+      // }
     })
-    const exchanges = utils.readDataFile('exchange.json')
-    t.deepEqual([exchanges], body, 'a detailed snapshot of the exchanges')
+    const exchanges = utils.readDataFile('exchanges.json')
+    t.deepEqual(exchanges, body, 'a detailed snapshot of the exchanges')
   })
 }

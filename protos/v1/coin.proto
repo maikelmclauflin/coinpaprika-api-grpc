@@ -87,18 +87,6 @@ message Event {
   string proof_image_link = 8;
 }
 
-message Ticker {
-  string name = 1;
-  string symbol = 2;
-}
-
-message Exchange {
-  string id = 1;
-  string name = 2;
-  repeated Ticker fiats = 3;
-  double adjusted_volume_24h_share = 4;
-}
-
 message Quote {
   string price = 1;
   string volume_24h = 2;

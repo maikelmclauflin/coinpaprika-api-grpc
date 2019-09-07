@@ -4,6 +4,7 @@ module.exports = Object.assign(
   require('./coins'),
   require('./coin-events'),
   require('./coin-twitter'),
+  require('./exchanges-global'),
   require('./exchanges'),
   require('./historical-tickers'),
   require('./market-overview'),

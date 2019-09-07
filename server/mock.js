@@ -7,7 +7,7 @@ module.exports = {
   coin,
   coinTwitter,
   coinEvents,
-  exchanges,
+  exchangesGlobal,
   markets,
   ohlc,
   person,
@@ -15,6 +15,7 @@ module.exports = {
   tag,
   tickers,
   historicalTickers,
+  exchanges,
 }
 
 function marketOverview () {
@@ -38,8 +39,8 @@ function coinEvents () {
   return [event, event]
 }
 
-function exchanges () {
-  return [utils.readDataFile('exchange.json')]
+function exchangesGlobal () {
+  return [utils.readDataFile('exchanges-global.json')]
 }
 
 function markets () {
@@ -94,4 +95,8 @@ function historicalTickers ({
   interval,
 }) {
   return utils.readDataFile('historical-tickers.json')
+}
+
+function exchanges () {
+  return utils.readDataFile('exchanges.json')
 }

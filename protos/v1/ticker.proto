@@ -1,7 +1,12 @@
 syntax = "proto3";
 package ticker;
 
-message Ticker {
+message Short {
+  string name = 1;
+  string symbol = 2;
+}
+
+message Detail {
   string id = 1;
   string name = 2;
   string symbol = 3;
@@ -29,6 +34,15 @@ message Quote {
   double ath_price = 12;
   string ath_date = 13;
   double percent_from_price_ath = 14;
+}
+
+message Volumes {
+  double adjusted_volume_24h = 1;
+  double adjusted_volume_7d = 2;
+  double adjusted_volume_30d = 3;
+  double reported_volume_24h = 4;
+  double reported_volume_7d = 5;
+  double reported_volume_30d = 6;
 }
 
 message Request {

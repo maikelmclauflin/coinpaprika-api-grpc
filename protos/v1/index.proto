@@ -8,6 +8,7 @@ import "ohlc.proto";
 import "person.proto";
 import "tag.proto";
 import "ticker.proto";
+import "exchange.proto";
 
 option go_package="v1";
 
@@ -23,7 +24,7 @@ service API {
   // Gets the latest events about a given coin
   rpc CoinEvents (coin.RequestBy) returns (stream coin.Event);
   // Gets the exchanges that host a given coin
-  rpc Exchanges (coin.RequestBy) returns (stream coin.Exchange);
+  rpc ExchangesGlobal (coin.RequestBy) returns (stream exchange.Global);
   // Gets the markets associated with a given coin
   rpc Markets (coin.RequestBy) returns (stream coin.Market);
   // Gets the OHLC data
@@ -35,7 +36,9 @@ service API {
   // Gets all tags
   rpc Tag (tag.RequestById) returns (tag.Tag);
   // Get all tickers with their quotes
-  rpc Tickers (ticker.Request) returns (stream ticker.Ticker);
+  rpc Tickers (ticker.Request) returns (stream ticker.Detail);
   // Get all tickers with their quotes
   rpc HistoricalTickers (ticker.HistoricalRequest) returns (stream ticker.HistoricalTicker);
+  // Get all exchanges
+  rpc Exchanges (exchange.RequestInputs) returns (stream exchange.Item);
 }

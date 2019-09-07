@@ -12,6 +12,11 @@ function readDataFile (...structure) {
   return JSON.parse(fs.readFileSync(p).toString())
 }
 
+function writeDataFile (p, obj) {
+  const json = JSON.stringify(obj)
+  fs.writeFileSync(path.join(__dirname, 'data', p), json)
+}
+
 function protosPath (version) {
   return path.join(__dirname, 'protos', version || 'v1', 'index.proto')
 }

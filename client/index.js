@@ -23,7 +23,7 @@ module.exports = {
   coin: clientWrap('Coin'),
   coinTwitter: clientWrap('CoinTwitter', { stream, }),
   coinEvents: clientWrap('CoinEvents', { stream, }),
-  exchanges: clientWrap('Exchanges', { stream, }),
+  exchangesGlobal: clientWrap('ExchangesGlobal', { stream, }),
   markets: clientWrap('Markets', { stream, }),
   ohlc: clientWrap('OHLC', { stream, }),
   person: clientWrap('Person'),
@@ -31,6 +31,7 @@ module.exports = {
   tag: clientWrap('Tag'),
   tickers: clientWrap('Tickers', { stream, }),
   historicalTickers: clientWrap('HistoricalTickers', { stream, }),
+  exchanges: clientWrap('Exchanges', { stream, }),
 }
 
 function call (transfer, transform) {
