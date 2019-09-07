@@ -1,7 +1,14 @@
 syntax = "proto3";
 package tag;
 
-message Tag {
+message Short {
+  string id = 1;
+  string name = 2;
+  int32 coin_counter = 3;
+  int32 ico_counter = 4;
+}
+
+message Item {
   string id = 1;
   string name = 2;
   int32 coin_counter = 3;

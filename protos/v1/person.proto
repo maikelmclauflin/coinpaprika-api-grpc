@@ -13,11 +13,17 @@ message RequestById {
   string id = 1;
 }
 
-message Person {
+message Short {
   string id = 1;
   string name = 2;
-  string description = 3;
-  int32 teams_count = 4;
+  int32 teams_count = 3;
+}
+
+message Item {
+  string id = 1;
+  string name = 2;
+  int32 teams_count = 3;
+  string description = 4;
   repeated utils.Link links = 5;
   repeated Position positions = 6;
 }

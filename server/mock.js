@@ -12,7 +12,6 @@ module.exports = {
   ohlc,
   person,
   tags,
-  tag,
   tickers,
   historicalTickers,
   exchanges,
@@ -58,17 +57,13 @@ function person () {
   return utils.readDataFile('person.json')
 }
 
-function tags () {
-  return utils.readDataFile('tags.json')
-}
-
-function tag ({
-  id
+function tags ({
+  id,
 }) {
   const tags = utils.readDataFile('tags.json')
-  return _.find(tags, {
+  return id ? _.filter(tags, {
     id,
-  })
+  }) : tags
 }
 
 function tickers ({

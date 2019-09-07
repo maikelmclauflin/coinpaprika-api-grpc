@@ -28,7 +28,6 @@ module.exports = {
   ohlc: clientWrap('OHLC', { stream, }),
   person: clientWrap('Person'),
   tags: clientWrap('Tags', { stream, }),
-  tag: clientWrap('Tag'),
   tickers: clientWrap('Tickers', { stream, }),
   historicalTickers: clientWrap('HistoricalTickers', { stream, }),
   exchanges: clientWrap('Exchanges', { stream, }),

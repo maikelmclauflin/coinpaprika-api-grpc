@@ -9,7 +9,7 @@ message TerseSummary {
   string symbol = 3;
 }
 
-message Summary {
+message Item {
   string id = 1;
   string name = 2;
   string symbol = 3;
@@ -23,12 +23,12 @@ message RequestBy {
   string coin = 1;
 }
 
-message Tag {
-  string id = 1;
-  string name = 2;
-  int32 coin_counter = 3;
-  int32 ico_counter = 4;
-}
+// message Tag {
+//   string id = 1;
+//   string name = 2;
+//   int32 coin_counter = 3;
+//   int32 ico_counter = 4;
+// }
 
 message Member {
   string id = 1;
@@ -45,7 +45,7 @@ message Details {
   bool is_new = 6;
   bool is_active = 7;
   string type = 8;
-  repeated Tag tags = 9;
+  repeated tag.Short tags = 9;
   repeated Member team = 10;
   string description = 11;
   string message = 12;

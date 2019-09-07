@@ -16,7 +16,7 @@ service API {
   // Gets a summary of the market
   rpc MarketOverview (utils.Empty) returns (misc.MarketOverview);
   // Gets a list of all of the coins
-  rpc Coins (utils.Empty) returns (stream coin.Summary);
+  rpc Coins (utils.Empty) returns (stream coin.Item);
   // Gets a detailed description of a singular coin
   rpc Coin (coin.RequestBy) returns (coin.Details);
   // Gets the latest tweet about a given coin
@@ -30,11 +30,9 @@ service API {
   // Gets the OHLC data
   rpc OHLC (ohlc.Request) returns (stream ohlc.Unit);
   // Gets detailed information about a person in the cryptosphere
-  rpc Person (person.RequestById) returns (person.Person);
+  rpc Person (person.RequestById) returns (person.Item);
   // Gets all tags
-  rpc Tags (utils.Empty) returns (stream tag.Tag);
-  // Gets all tags
-  rpc Tag (tag.RequestById) returns (tag.Tag);
+  rpc Tags (tag.RequestById) returns (stream tag.Item);
   // Get all tickers with their quotes
   rpc Tickers (ticker.Request) returns (stream ticker.Detail);
   // Get all tickers with their quotes

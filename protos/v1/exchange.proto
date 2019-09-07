@@ -12,6 +12,12 @@ message Global {
   double adjusted_volume_24h_share = 4;
 }
 
+message Short {
+  string id = 1;
+  string name = 2;
+  int32 rank = 3;
+}
+
 message Item {
   string id = 1;
   string name = 2;
