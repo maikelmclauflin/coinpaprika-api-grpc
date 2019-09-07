@@ -31,6 +31,7 @@ module.exports = {
   tickers: clientWrap('Tickers', { stream, }),
   historicalTickers: clientWrap('HistoricalTickers', { stream, }),
   exchanges: clientWrap('Exchanges', { stream, }),
+  search: clientWrap('Search'),
 }
 
 function call (transfer, transform) {

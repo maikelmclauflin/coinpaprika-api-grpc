@@ -9,12 +9,19 @@ message TerseSummary {
   string symbol = 3;
 }
 
+message ICO {
+  string id = 1;
+  string name = 2;
+  string symbol = 3;
+  bool is_new = 4;
+}
+
 message Item {
   string id = 1;
   string name = 2;
   string symbol = 3;
-  int32 rank = 4;
-  bool is_new = 5;
+  bool is_new = 4;
+  int32 rank = 5;
   bool is_active = 6;
   string type = 7;
 }

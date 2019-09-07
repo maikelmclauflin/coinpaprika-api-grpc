@@ -1,0 +1,22 @@
+syntax = "proto3";
+package search;
+
+import "coin.proto";
+import "exchange.proto";
+import "person.proto";
+import "tag.proto";
+
+message Result {
+  repeated coin.Item currencies = 1;
+  repeated coin.ICO icos = 2;
+  repeated exchange.Short exchanges = 3;
+  repeated person.Short people = 4;
+  repeated tag.Short tags = 5;
+}
+
+message Request {
+  string q = 1;
+  string c = 2;
+  string modifier = 3;
+  int32 limit = 4;
+}

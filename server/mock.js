@@ -15,6 +15,7 @@ module.exports = {
   tickers,
   historicalTickers,
   exchanges,
+  search,
 }
 
 function marketOverview () {
@@ -94,4 +95,8 @@ function historicalTickers ({
 
 function exchanges () {
   return utils.readDataFile('exchanges.json')
+}
+
+function search () {
+  return utils.readDataFile('search-btc.json')
 }

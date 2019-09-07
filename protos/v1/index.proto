@@ -9,6 +9,7 @@ import "person.proto";
 import "tag.proto";
 import "ticker.proto";
 import "exchange.proto";
+import "search.proto";
 
 option go_package="v1";
 
@@ -39,4 +40,6 @@ service API {
   rpc HistoricalTickers (ticker.HistoricalRequest) returns (stream ticker.HistoricalTicker);
   // Get all exchanges
   rpc Exchanges (exchange.RequestInputs) returns (stream exchange.Item);
+  // Search
+  rpc Search (search.Request) returns (search.Result);
 }

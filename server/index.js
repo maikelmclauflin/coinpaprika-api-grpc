@@ -40,6 +40,7 @@ async function start () {
     Tickers: stream(mock.tickers),
     HistoricalTickers: stream(mock.historicalTickers),
     Exchanges: stream(mock.exchanges),
+    Search: urnary(mock.search),
   })
   const insecure = grpc.ServerCredentials.createInsecure()
   server.bind(utils.binding(), insecure)
